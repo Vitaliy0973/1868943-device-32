@@ -380,6 +380,10 @@ main {
   right: 0;
 }
 
+.slider-button:hover {
+  opacity: 0.6;
+}
+
 .slider-prev:focus {
   border: 2px solid #AF4FFF;
   box-sizing: border-box;
@@ -392,10 +396,6 @@ main {
   box-sizing: border-box;
   border-radius: 6px;
   outline: none;
-}
-
-.slider-button:hover {
-  opacity: 0.6;
 }
 
 .slider-button:active {
@@ -466,11 +466,6 @@ main {
   background-color: #FFE17F;
 }
 
-.top-product-info:active {
-  opacity: 0.3;
-  background-color: rgba(255, 225, 127, 1);
-}
-
 .top-product-info:focus {
   outline: none;
 }
@@ -482,6 +477,15 @@ main {
   background-color: #AF4FFF;
   position: absolute;
   z-index: -1;
+}
+
+.top-product-info:active {
+  opacity: 0.3;
+  background-color: rgba(255, 225, 127, 1);
+}
+
+.top-product-info:active::after {
+  background-color: rgba(255, 225, 127, 1);
 }
 
 .slider-pagination {
@@ -599,7 +603,7 @@ main {
 
 .categories-text {
   width: 160px;
-  font-family: Raleway;
+  font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 18px;
@@ -1085,13 +1089,13 @@ main {
   color: #000000;
 }
 
+.subscription-form-email:hover {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
+
 .subscription-form:focus-within .subscription-form-email {
   background-color: #DCDCDC;
   outline: none;
-}
-
-.subscription-form-email:hover {
-  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
 }
 
 .subscription-form:active .subscription-form-email {
@@ -1102,19 +1106,18 @@ main {
   border-bottom: 3px solid #FF3D3D;
 }
 
-.subscription-form-button:focus {
-  border: 3px solid #AF4FFF;
-  outline: none;
-}
-
 .subscription-form-button:hover {
-  /* color: #FFFFFF; */
   background-color: #000000;
   border: transparent;
 }
 
 .subscription-form-button:hover .subscription-form-button-text {
   color: #FFFFFF;
+}
+
+.subscription-form-button:focus {
+  border: 3px solid #AF4FFF;
+  outline: none;
 }
 
 .subscription-form-button:active .subscription-form-button-text {
@@ -1506,6 +1509,49 @@ main {
   letter-spacing: -0.02em;
 }
 
+.range-scale {
+  position: relative;
+  width: 200px;
+  height: 2px;
+  margin-bottom: 15px;
+  background-color: #DCDCDC;
+}
+
+.range-bar {
+  position: absolute;
+  height: 2px;
+  background-color: #000000;
+}
+
+.range-toggle {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #EBEBEB;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-wrapper-inputs {
+  position: absolute;
+}
+
+.inputs-min {
+  top: 14px;
+  left: -14px;
+}
+
+.inputs-max {
+  top: 14px;
+  right: -59px;
+}
+
+.catalog-filter-label {
+  display: flex;
+  margin-right: 5px;
+}
+
 .catalog-filter-price-text {
   font-family: "Rubik", sans-serif;
   font-style: normal;
@@ -1514,6 +1560,84 @@ main {
   line-height: 18px;
   text-align: center;
   opacity: 0.3;
+}
+
+.catalog-filter-input {
+  width: 60px;
+  padding: 0 2px;
+  font: inherit;
+  background-color: transparent;
+  border: none;
+  opacity: 0.3;
+  appearance: textfield;
+}
+
+.catalog-filter-input::-webkit-outer-spin-button,
+.catalog-filter-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.toogle-min {
+  top: -8px;
+  left: -9px;
+}
+
+.toogle-max {
+  top: -8px;
+  right: -9px;
+}
+
+.range-toggle:focus {
+  border: 2px solid #AF4FFF;
+  outline: none;
+}
+
+.range-toggle:focus + .range-wrapper-inputs,
+.range-toggle:focus + .range-wrapper-inputs .catalog-filter-input {
+  color: #AF4FFF;
+}
+
+.range-toggle:active {
+  background-color: #000000;
+  border: 2px solid #000000;
+}
+
+.range-toggle:active +.range-wrapper-inputs .catalog-filter-price-text,
+.range-toggle:active + .range-wrapper-inputs .catalog-filter-input {
+  color: #000000;
+  opacity: 1;
+}
+
+.catalog-filter-label {
+  display: flex;
+  margin-right: 5px;
+}
+
+.catalog-filter-price-text {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  opacity: 0.3;
+}
+
+.catalog-filter-input {
+  width: 60px;
+  padding: 0 2px;
+  font: inherit;
+  background-color: transparent;
+  border: none;
+  opacity: 0.3;
+  appearance: textfield;
+}
+
+.catalog-filter-input::-webkit-outer-spin-button,
+.catalog-filter-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
 }
 
 .catalog-filter-strip-two {
@@ -1532,7 +1656,69 @@ main {
 }
 
 .catalog-filter-item {
+  width: fit-content;
   margin-bottom: 21px;
+}
+
+.control {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+  cursor: pointer;
+}
+
+.control-mark {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 3px;
+  opacity: 0.2;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark {
+  opacity: 1;
+}
+
+.control:hover .control-input[type="checkbox"]:checked ~ span {
+  opacity: 0.5;
+}
+
+.control:focus-within .control-mark {
+  border: 2px solid #AF4FFF;
+  opacity: 1;
+}
+
+.control:focus-within .control-label {
+  color: #AF4FFF;
+}
+
+.control:active .control-mark,
+.control:active .control-label {
+  opacity: 0.2;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background-image: url(../image/galka.svg);
+}
+
+.control:focus-within .control-input[type="checkbox"]:checked + .control-mark::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background-image: url(../image/galka-purple.svg);
 }
 
 .catalog-filter-strip-three {
@@ -1706,6 +1892,10 @@ main {
   top: 181px;
   left: 90px;
   z-index: 1;
+}
+
+.product-cards-link:hover::before:hover {
+  content: "jashdkajsd";
 }
 
 .product-cards-link:hover .product-cards-img {

@@ -88,19 +88,30 @@
           <div class="catalog-filter-strip-one"></div>
           <fieldset class="catalog-filter-group">
             <legend class="catafog-filter-title">Стоимость</legend>
-            <button class="range-toggle toogle-min" type="button">
-              <span class="visually-hidden">Изменить минимальную цену</span>
-            </button>
-            <button class="range-toggle toogle-max" type="button">
-              <span class="visually-hidden">Изменить максимальную цену</span>
-            </button>
-            <label class="catalog-filter-label">
-              <span class="catalog-filter-price-text">от </span><input class="catalog-filter-input" type="number"
-                name="min-price">
-            </label>
-            <label class="catalog-filter-label">
-              <span class="catalog-filter-price-text">до </span><input class="catalog-filter-input" type="number"
-                name="max-price">
+            <div class="range">
+              <div class="range-scale">
+                <div class="range-bar" style="left: 9px; width: 137px">
+                  <button class="range-toggle toogle-min" type="button">
+                    <span class="visually-hidden">Изменить минимальную цену</span>
+                  </button>
+                  <div class="range-wrapper-inputs inputs-min">
+                    <label class="catalog-filter-label">
+                      <span class="catalog-filter-price-text">от </span><input class="catalog-filter-input"
+                        type="number" value="0" name="min-price">
+                    </label>
+                  </div>
+                  <button class="range-toggle toogle-max" type="button">
+                    <span class="visually-hidden">Изменить максимальную цену</span>
+                  </button>
+                  <div class="range-wrapper-inputs inputs-max">
+                    <label class="catalog-filter-label">
+                      <span class="catalog-filter-price-text">до </span><input class="catalog-filter-input"
+                        type="number" value="5000" name="max-price">
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
             </label>
           </fieldset>
           <div class="catalog-filter-strip-two"></div>
@@ -109,31 +120,36 @@
             <ul class="catalog-filter-list">
               <li class="catalog-filter-item">
                 <label class="control">
-                  <input class="control-input" type="checkbox" name="black" checked>
+                  <input class="visually-hidden control-input" type="checkbox" name="black" checked>
+                  <span class="control-mark"></span>
                   <span class="control-label">Черный</span>
                 </label>
               </li>
               <li class="catalog-filter-item">
                 <label class="control">
-                  <input class="control-input" type="checkbox" name="white" checked>
+                  <input class="visually-hidden control-input" type="checkbox" name="white" checked>
+                  <span class="control-mark"></span>
                   <span class="control-label">Белый</span>
                 </label>
               </li>
               <li class="catalog-filter-item">
                 <label class="control">
-                  <input class="control-input" type="checkbox" name="blue">
+                  <input class="visually-hidden control-input" type="checkbox" name="blue">
+                  <span class="control-mark"></span>
                   <span class="control-label">Синий</span>
                 </label>
               </li>
               <li class="catalog-filter-item">
                 <label class="control">
-                  <input class="control-input" type="checkbox" name="red">
+                  <input class="visually-hidden control-input" type="checkbox" name="red">
+                  <span class="control-mark"></span>
                   <span class="control-label">Красный</span>
                 </label>
               </li>
               <li class="catalog-filter-item">
                 <label class="control">
-                  <input class="control-input" type="checkbox" name="pink">
+                  <input class="visually-hidden control-input" type="checkbox" name="pink">
+                  <span class="control-mark"></span>
                   <span class="control-label">Розовый</span>
                 </label>
               </li>
